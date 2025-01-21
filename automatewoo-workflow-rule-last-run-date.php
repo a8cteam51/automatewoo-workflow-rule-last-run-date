@@ -4,8 +4,8 @@
  * Plugin URI:  https://github.com/a8cteam51/automatewoo-workflow-rule-last-run-date
  * Description: Extends the functionality of AutomateWoo with a custom rule which checks when a workflow last ran
  * Version:     1.0.0
- * Author:      WP Special Projects
- * Author URI:  https://wpspecialprojects.wordpress.com/
+ * Author:      Automattic Special Projects
+ * Author URI:  https://specialprojects.automattic.com/
  * License:     GPL v2 or later
  */
 
