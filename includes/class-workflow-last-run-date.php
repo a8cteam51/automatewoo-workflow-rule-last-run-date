@@ -42,7 +42,6 @@ class Workflow_Last_Run_Date extends Abstract_Date {
      */
     public function validate( $data_item, $compare, $value = null ) {
         $workflow = $this->get_workflow();
-
         if ( ! $workflow ) {
             return false;
         }
@@ -52,11 +51,9 @@ class Workflow_Last_Run_Date extends Abstract_Date {
         $query->where_workflow( $workflow->get_id() );
         $query->set_limit( 1 );
         $query->set_ordering( 'date', 'DESC' );
-        
         $logs = $query->get_results();
-        
         if ( empty( $logs ) ) {
-            return $compare === 'is_not_set';
+            return $compare === 'is_not_set' || $compare === 'is_not_in_the_last';
         }
 
         return $this->validate_date( $compare, $value, $logs[0]->get_date() );

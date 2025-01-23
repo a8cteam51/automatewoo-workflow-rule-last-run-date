@@ -13,7 +13,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-error_log( 'automatewoo-workflow-rule-last-run-date.php loaded' );
 add_filter( 'automatewoo/rules/includes', 'to51_automatewoo_workflow_last_run_rules' );
 
 /**
@@ -21,7 +20,6 @@ add_filter( 'automatewoo/rules/includes', 'to51_automatewoo_workflow_last_run_ru
  * @return array
  */
 function to51_automatewoo_workflow_last_run_rules( $rules ) {
-    error_log( 'to51_automatewoo_workflow_last_run_rules' );
 	$rules['workflow_last_run_date'] = dirname( __FILE__ ) . '/includes/class-workflow-last-run-date.php';
 	return $rules;
 }
